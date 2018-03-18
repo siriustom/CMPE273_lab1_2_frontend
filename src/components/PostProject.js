@@ -21,6 +21,7 @@ class PostProject extends React.Component {
         des: '',
         skillReq: '',
         budget: '< 10000',
+        date: (new Date()).getTime(),
     }
 
     handleTitleChange = (e) => {
@@ -37,6 +38,14 @@ class PostProject extends React.Component {
         this.setState({budget: e.target.value});
     }
 
+    handleDateChange = (e) => {
+        var daysStr = e.target.value;
+        var days = Number(daysStr);
+        var offset = days * 60 * 60 * 24 * 1000;
+        var period = this.state.date + offset;
+        this.setState({date: period});
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         const data = new FormData();
@@ -48,6 +57,7 @@ class PostProject extends React.Component {
         data.append('des', this.state.des);
         data.append('skillReq', this.state.skillReq);
         data.append('budget', this.state.budget);
+        data.append('period', this.state.date);
         axios.post('http://localhost:4200/postproject', data).then((response) => {
             console.log(response);
             alert("your project has been posted.");
@@ -99,6 +109,13 @@ class PostProject extends React.Component {
                             <option value="50000 ~ 100000">50000 ~ 100000</option>
                             <option value="> 100000">&gt; 100000</option>
                         </select>
+                    </label>
+                </div>
+                <div className={'form-group'}>
+                    <label className={'register-form-group'}>
+                        <text className={'register-from-labeltext'}>PeriodInDays:</text>
+                        <input type={'number'} className={'form-control'} placeholder={'Enter period in days'}
+                               onChange={this.handleDateChange}/>
                     </label>
                 </div>
                 <div className={'form-group'}>
