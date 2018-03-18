@@ -1,0 +1,41 @@
+@import '../../node_modules/antd/dist/antd.css';
+@import 'Register.css';
+@import 'Login.css';
+@import 'Header.css';
+@import 'Profile.css';
+@import 'bootstrap.css';
+.App {
+  text-align: center;
+  background-image: url("https://www.walldevil.com/wallpapers/a89/nagrand-world-of-warcraft-wow.jpg");
+  height: 1200px;
+  width: 100%;
+}
+
+.App-logo {
+  height: 60px;
+  float: left;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+  color: #61dafb;
+  padding-top: 16px;
+  margin-left: 10px;
+  float: left;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+

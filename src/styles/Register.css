@@ -1,0 +1,16 @@
+.register-form {
+    margin-top: 40px;
+    width: 500px;
+}
+
+.register-form-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.register-from-labeltext {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+    color: white;
+}

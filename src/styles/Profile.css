@@ -1,0 +1,35 @@
+.profile-container > div {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-adjust {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-title {
+    margin-bottom: 0.75rem;
+    color: #CCE0D6;
+}
+
+.profile-text {
+    color: #CCE0D6;
+}
+.profile-text:last-child {
+    margin-bottom: 0;
+}
+
+.profile-button {
+    margin: 10px;
+}
+
