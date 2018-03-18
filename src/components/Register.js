@@ -12,7 +12,6 @@ export class Register extends React.Component {
         phone: '',
         about: '',
         skills: '',
-        imageURL: '',
     }
 
     handleNameChange = (e) => {
