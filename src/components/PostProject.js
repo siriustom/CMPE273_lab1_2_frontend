@@ -20,7 +20,7 @@ class PostProject extends React.Component {
         title: '',
         des: '',
         skillReq: '',
-        budget: '',
+        budget: '< 10000',
     }
 
     handleTitleChange = (e) => {
@@ -93,10 +93,10 @@ class PostProject extends React.Component {
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>BudgetRange:</text>
-                        <select onChange={this.onBudgetChange}>
-                            <option value="< 10000">&lt; 10000</option>
+                        <select value={this.state.budget} onChange={this.onBudgetChange}>
+                            <option defaultValue="< 10000">&lt; 10000</option>
                             <option value="10000 ~ 50000">10000 ~ 50000</option>
-                            <option defaultValue="50000 ~ 100000">50000 ~ 100000</option>
+                            <option value="50000 ~ 100000">50000 ~ 100000</option>
                             <option value="> 100000">&gt; 100000</option>
                         </select>
                     </label>
