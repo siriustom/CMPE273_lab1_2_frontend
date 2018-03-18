@@ -54,7 +54,7 @@ class Profile extends React.Component {
         const data = new FormData();
         data.append('id', this.state.id);
         data.append('file', this.inputImage.files[0]);
-        data.append('filename', this.fileName.value);
+        data.append('filename', this.fileName.value === '' ? this.state.image : this.fileName.value);
         data.append('name', this.state.name);
         data.append('email', this.state.email);
         data.append('password', this.state.password);
