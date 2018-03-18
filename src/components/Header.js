@@ -11,15 +11,23 @@ export class Header extends React.Component {
                 <h1 className="App-title">FreeLancer</h1>
                 {
                     this.props.isLoggedIn &&
-                        <Link className={'header-widget'} to={'/profile'}>Profile</Link>
+                    <div className="header-widget" style={{marginLeft: '20px'}}>
+                        <Link to={'/profile'}>Profile</Link>
+                    </div>
                 }
                 {
                     this.props.isLoggedIn &&
-                        <a className="header-widget"
-                           onClick={this.props.handleLogout}
-                        >
-                            <Icon type="logout" className={'header-logout'}/>
-                        </a>
+                    <div className="header-widget">
+                        <Link to={'/postproject'}>Post</Link>
+                    </div>
+                }
+                {
+                    this.props.isLoggedIn &&
+                        <div className="header-widget">
+                            <a onClick={this.props.handleLogout}>
+                                <Icon type="logout" className={'header-logout'}/>
+                            </a>
+                        </div>
                 }
             </header>
         );
