@@ -33,3 +33,14 @@
     margin: 10px;
 }
 
+.profile-input {
+    width: 100px;
+}
+
+.profile-update-label {
+    width: 50px;
+    text-align: right;
+    margin-right: 10px;
+    color: white;
+}
+
