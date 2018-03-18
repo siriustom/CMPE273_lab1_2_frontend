@@ -1,19 +1,35 @@
 import React from 'react';
 import {TOKEN_KEY} from '../constants';
 import axios from "axios/index";
+import { connect } from 'react-redux';
+
+
+const mapStateToProps = state => ({
+    email: state.email,
+    name: state.name,
+    id: state.id,
+    phone: state.phone,
+    about: state.about,
+    skills: state.skills,
+    image: state.image,
+    password: state.password,
+});
 
 class Profile extends React.Component {
 
-    state = {
-        id: '',
-        name: '',
-        email: '',
-        phone: '',
-        about: '',
-        skills: '',
-        image: '',
-        password: '',
-        isBtnToggle: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: this.props.id,
+            name: this.props.name,
+            email: this.props.email,
+            phone: this.props.phone,
+            about: this.props.about,
+            skills: this.props.skills,
+            image: this.props.image,
+            password: this.props.password,
+            isBtnToggle: false,
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -211,4 +227,4 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+export default connect(mapStateToProps)(Profile);

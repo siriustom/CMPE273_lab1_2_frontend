@@ -1,7 +1,12 @@
 const initialState = {
-    isLoggedIn: false,
+    id: '',
     email: '',
     name: '',
+    phone: '',
+    about: '',
+    skills: '',
+    image: '',
+    password: '',
 };
 
 export default initialState;
