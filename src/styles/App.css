@@ -5,6 +5,7 @@
 @import 'Profile.css';
 @import 'bootstrap.css';
 @import 'Projects.css';
+@import 'ProjectDetail.css';
 .App {
   text-align: center;
   background-image: url("https://www.walldevil.com/wallpapers/a89/nagrand-world-of-warcraft-wow.jpg");

@@ -7,6 +7,7 @@ const initialState = {
     skills: '',
     image: '',
     password: '',
+    projects: [],
 };
 
 export default initialState;

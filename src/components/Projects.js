@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios/index";
 import { connect } from 'react-redux';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import ProjectDetail from './ProjectDetail';
 
 const mapStateToProps = state => ({
     email: state.email,
@@ -18,6 +19,8 @@ class Projects extends React.Component {
     state = {
         projects: [],
         btnClicked: false,
+        rowClicked: false,
+        clickedProject: {},
     }
     handleClick = () => {
         axios.post('http://localhost:4200/projects', {
@@ -31,17 +34,27 @@ class Projects extends React.Component {
             console.log(error);
         });
     }
+    getOptions = () => {
+        return ({
+            onRowClick: (row) => {
+                console.log(row);
+                this.setState({rowClicked: !this.state.rowClicked});
+                this.setState({clickedProject: row});
+            }
+        });
+    }
     render() {
         return(
-            <div className={'projects-from'}>
+            <div className={'projects-form'}>
                 {
                     !this.state.btnClicked ?
                         <button type="button" class="btn btn-outline-primary" onClick={this.handleClick}>
                             See Projects List</button>
                         :
                         <BootstrapTable data={this.state.projects}
-                                        className={'projects-from-content'}
-                                        striped hover>
+                                        className={'projects-form-content'}
+                                        options={this.getOptions()}
+                                        striped hover pagination keyBoardNav>
                             <TableHeaderColumn isKey dataField='Name' width={'130px'}>Project Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='Description' width={'115px'}>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='SkillsRequired' width={'141px'}>Skills Required</TableHeaderColumn>
@@ -51,17 +64,15 @@ class Projects extends React.Component {
                             <TableHeaderColumn dataField='BidNow' width={'89px'}>Bid Now</TableHeaderColumn>
                         </BootstrapTable>
                 }
+                {
+                    this.state.rowClicked &&
+                        <div className={'projects-detail-container'}>
+                            <ProjectDetail data={this.state.clickedProject}/>
+                        </div>
+                }
             </div>
         );
     }
 }
-{/*<p>a list of projects*/}
-{/*project title*/}
-{/*project des*/}
-{/*skills required*/}
-{/*employer*/}
-{/*budget range*/}
-{/*number of bid*/}
-{/*bid now*/}
-{/*</p>*/}
+
 export default connect(mapStateToProps)(Projects);
