@@ -13,6 +13,7 @@ export default class ProjectDetail extends React.Component {
 
         }
         render() {
+            const days = (Number(this.props.data.Period) - (new Date()).getTime())/ (24 * 60 * 60 * 1000);
             return (
                 <div className={'project-detail-container'}>
                     <Card
@@ -28,6 +29,7 @@ export default class ProjectDetail extends React.Component {
                         <p>Skills: {this.props.data.SkillsRequired}</p>
                         <p>Budget Range: {this.props.data.BudgetRange}</p>
                         <p>AverageBid: {this.props.data.AverageBid}</p>
+                        <p>PeriodInDays: {Math.round(days)}</p>
                         <button type="button" class="btn btn-outline-primary" onClick={this.handleBid}>
                             Bid</button>
                     </Card>
