@@ -18,6 +18,12 @@ export class Header extends React.Component {
                 {
                     this.props.isLoggedIn &&
                     <div className="header-widget">
+                        <Link to={'/projects'}>All Projects</Link>
+                    </div>
+                }
+                {
+                    this.props.isLoggedIn &&
+                    <div className="header-widget" style={{marginLeft: '20px'}}>
                         <Link to={'/postproject'}>Post Project</Link>
                     </div>
                 }
