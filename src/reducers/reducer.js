@@ -7,6 +7,7 @@ import {
     UPDATE_PASSWORD,
     UPDATE_PHONE,
     UPDATE_SKILLS,
+    UPDATE_BIDLIST
 } from '../actions/action';
 import initialState from '../store/initialState';
 
@@ -50,6 +51,11 @@ const reducer = (state = initialState, action) => {
         case UPDATE_SKILLS: {
             return Object.assign({}, state, {
                 skills: action.skills,
+            });
+        }
+        case UPDATE_BIDLIST: {
+            return Object.assign({}, state, {
+                bidlist: action.list,
             });
         }
         default:

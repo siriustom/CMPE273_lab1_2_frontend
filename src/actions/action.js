@@ -1,3 +1,5 @@
+import {Utils} from '../utils/actionHelper.js';
+
 export const UPDATE_EMAIL = 'UPDATE_EMAIL';
 export const UPDATE_NAME = 'UPDATE_NAME';
 export const UPDATE_ID = 'UPDATE_ID';
@@ -6,6 +8,7 @@ export const UPDATE_ABOUT = 'UPDATE_ABOUT';
 export const UPDATE_SKILLS = 'UPDATE_SKILLS';
 export const UPDATE_IMAGE = 'UPDATE_IMAGE';
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const UPDATE_BIDLIST = 'UPDATE_BIDLIST';
 
 export function updateEmail(email) {
     return {
@@ -63,5 +66,11 @@ export function updatePassword(password) {
     }
 }
 
+export function updateBidList(list) {
+    return {
+        type: UPDATE_BIDLIST,
+        list,
+    }
+}
 
 

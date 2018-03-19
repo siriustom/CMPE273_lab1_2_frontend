@@ -20,6 +20,8 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PostProject from "./PostProject";
+import BidList from "./BidList";
+import {Utils} from '../utils/actionHelper';
 
 const mapStateToProps = state => ({
     email: state.email,
@@ -53,6 +55,7 @@ class App extends React.Component {
         console.log(dataObj);
         localStorage.setItem(TOKEN_KEY, dataObj);
         this.setUser(dataObj);
+        Utils.getBidList(dataObj.id);
         this.setState({isLoggedIn: true});
         this.setState({data: dataObj});
     }
@@ -109,6 +112,15 @@ class App extends React.Component {
             return <PostProject />;
         }
     }
+
+    getBidlist = () => {
+        if (!this.state.isLoggedIn) {
+            return <Redirect to={'/login'}/>;
+        } else {
+            window.history.pushState({}, '', '/bidlist');
+            return <BidList/>;
+        }
+    }
     render() {
         return (
             <div className="App">
@@ -123,6 +135,7 @@ class App extends React.Component {
                                     <Route path="/projects" render={this.getProjects}/>
                                     <Route path="/profile" render={this.getProfile}/>
                                     <Route path="/postproject" render={this.getPost}/>
+                                    <Route path="/bidlist" render={this.getBidlist}/>
                                 </Switch>
                         </div>
                     </div>
