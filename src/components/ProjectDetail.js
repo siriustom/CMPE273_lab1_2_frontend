@@ -4,20 +4,51 @@ import { connect } from 'react-redux';
 import { Card } from 'antd';
 const { Meta } = Card;
 
-export default class ProjectDetail extends React.Component {
+const mapStateToProps = state => ({
+    email: state.email,
+    name: state.name,
+    id: state.id,
+    phone: state.phone,
+    about: state.about,
+    skills: state.skills,
+    image: state.image,
+    password: state.password,
+});
+
+class ProjectDetail extends React.Component {
+
+        state = {
+            bid: '',
+        }
         handleClick = () => {
 
         }
 
-        handleBid = () => {
+        handlgeBidSubmit = (e) => {
+            e.preventDefault();
+            const data = new FormData();
+            data.append('projectid', this.props.data.id);
+            data.append('image', this.props.image);
+            data.append('username', this.props.name);
+            data.append('userid', this.props.id);
+            data.append('bidprice', this.state.bid);
+            data.append('period', this.props.data.Period);
+            axios.post('http://localhost:4200/bid', data).then((response) => {
+                console.log(response);
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
 
+        handleBidChange = (e) => {
+            this.setState({bid: e.target.value });
         }
         render() {
             const days = (Number(this.props.data.Period) - (new Date()).getTime())/ (24 * 60 * 60 * 1000);
             return (
                 <div className={'project-detail-container'}>
                     <Card
-                        style={{ width: 240 }}
+                        style={{ width: 500 }}
                         cover={<img alt="pic" src="https://d1pet9gxylz2tx.cloudfront.net/uploads/2017/08/The-Project.png" />}
                     >
                         <Meta
@@ -30,10 +61,17 @@ export default class ProjectDetail extends React.Component {
                         <p>Budget Range: {this.props.data.BudgetRange}</p>
                         <p>AverageBid: {this.props.data.AverageBid}</p>
                         <p>PeriodInDays: {Math.round(days)}</p>
-                        <button type="button" class="btn btn-outline-primary" onClick={this.handleBid}>
-                            Bid</button>
+                        <div className={'project-detail-bidcontainer'}>
+                            <form className={'project-detail-bid'} onSubmit={this.handlgeBidSubmit}>
+                                    <input type={'text'} className={'profile-input'} placeholder={'your price'}
+                                           onChange={this.handleBidChange}/>
+                                    <input type={'submit'} value={'Bid'} className={'btn btn-outline-danger'}/>
+                            </form>
+                        </div>
                     </Card>
                 </div>
             );
         }
 }
+
+export default connect(mapStateToProps)(ProjectDetail);

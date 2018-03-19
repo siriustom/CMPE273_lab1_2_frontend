@@ -3,3 +3,13 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.project-detail-bid {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.project-detail-bidcontainer {
+    float: right;
+}
