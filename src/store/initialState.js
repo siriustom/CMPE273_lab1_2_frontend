@@ -7,7 +7,12 @@ const initialState = {
     skills: '',
     image: '',
     password: '',
-    bidlist: [],
+    bidlist: [{
+        image: 'lin',
+        name: 'linxiaoran',
+        bid: '120000',
+        period: '14',
+    }],
 };
 
 export default initialState;

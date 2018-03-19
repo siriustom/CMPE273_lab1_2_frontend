@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
     skills: state.skills,
     image: state.image,
     password: state.password,
+    bidlist: state.bidlist,
 });
 
 class Projects extends React.Component {

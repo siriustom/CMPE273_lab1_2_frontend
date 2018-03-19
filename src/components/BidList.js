@@ -17,17 +17,15 @@ const mapStateToProps = state => ({
 class BidList extends React.Component {
     render() {
         return (
-            <div className={'projects-form'}>
+
                 <BootstrapTable data={this.props.bidlist}
                                 className={'projects-form-content'}
                                 striped hover pagination keyBoardNav>
-                    <TableHeaderColumn isKey dataField='Name' width={'130px'}>Project Name</TableHeaderColumn>
-                    <TableHeaderColumn dataField='Employer' width={'98px'}>Employer</TableHeaderColumn>
-                    <TableHeaderColumn dataField='BudgetRange' width={'135px'}>AverageBid</TableHeaderColumn>
-                    <TableHeaderColumn dataField='bidprice' width={'136px'}>YourBid</TableHeaderColumn>
+                    <TableHeaderColumn isKey dataField='image' width={'130px'}>ProfileImage</TableHeaderColumn>
+                    <TableHeaderColumn dataField='bid' width={'98px'}>BidPrice</TableHeaderColumn>
+                    <TableHeaderColumn dataField='period' width={'135px'}>PeriodInDays</TableHeaderColumn>
+                    <TableHeaderColumn dataField='name' width={'136px'}>FreelancerName</TableHeaderColumn>
                 </BootstrapTable>
-
-            </div>
         );
     }
 }

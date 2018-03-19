@@ -29,7 +29,7 @@ export class Header extends React.Component {
                 }
                 {
                     this.props.isLoggedIn &&
-                    <div className="header-widget">
+                    <div className="header-widget" style={{marginLeft: '20px'}}>
                         <Link to={'/bidlist'}>BidListAsEmployer</Link>
                     </div>
                 }

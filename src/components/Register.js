@@ -104,7 +104,7 @@ export class Register extends React.Component {
                         <input ref={(ref) => { this.fileName = ref; }} type={'text'} className={'form-control'} placeholder={'Enter desired name of the file'}/>
                     </label>
                 </div>
-                <div className={'form-group'}>
+                <div className={'form-group'} style={{paddingLeft: 70}}>
                     <input type={'submit'} value={'Register'} className={'btn btn-primary'}/>
                     <p style={{color: 'white'}}>I already have an account, go back to <Link to="/login">Login</Link>
                     </p>
