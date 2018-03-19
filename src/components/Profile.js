@@ -100,7 +100,7 @@ class Profile extends React.Component {
             <div className={'profile-container'}>
                 <div>
                     <img className="img-adjust"
-                         src={`http://localhost:4200/${image}`} alt={'profile image'}/>
+                         src={`http://localhost:4200/images/${image}`} alt={'profile image'}/>
                     <div className="card-body">
                         <h4 className="profile-title"><span>Name: </span>{` ${name}`}</h4>
                         <p className="profile-text"><span>Email: </span>{` ${email}`}</p>
