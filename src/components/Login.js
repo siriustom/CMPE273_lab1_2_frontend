@@ -14,8 +14,10 @@ class NormalLoginForm extends React.Component {
                     email: values.email,
                     password: values.password,
                 }).then((response) => {
+                    console.log(response);
                     this.props.handleLogin(response.data);
                 }).catch((error) => {
+                    alert("either your email or password is incorrect");
                     console.log(error);
                 });
             }
