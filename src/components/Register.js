@@ -59,53 +59,97 @@ export class Register extends React.Component {
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Name:</text>
-                        <input type={'text'} name={'name'} className={'form-control'} onChange={this.handleNameChange}/>
+                        <input type={'text'}
+                               name={'name'}
+                               className={'form-control'}
+                               onChange={this.handleNameChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Email:</text>
-                        <input type={'email'} name={'email'} className={'form-control'} onChange={this.handleEmailChange}/>
+                        <input type={'email'}
+                               name={'email'}
+                               className={'form-control'}
+                               onChange={this.handleEmailChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Password:</text>
-                        <input type={'password'} name={'password'} className={'form-control'} onChange={this.handlePasswordChange}/>
+                        <input type={'password'}
+                               name={'password'}
+                               className={'form-control'}
+                               onChange={this.handlePasswordChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Phone:</text>
-                        <input type={'tel'} name={'phone'} className={'form-control'} onChange={this.handlePhoneChange}/>
+                        <input type={'tel'}
+                               name={'phone'}
+                               className={'form-control'}
+                               onChange={this.handlePhoneChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>About Me:</text>
-                        <input type={'text'} name={'about'} className={'form-control'} onChange={this.handleAboutChange}/>
+                        <input type={'text'}
+                               name={'about'}
+                               className={'form-control'}
+                               onChange={this.handleAboutChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Skills:</text>
-                        <input type={'text'} name={'skills'} className={'form-control'} onChange={this.handleSkillChange}/>
+                        <input type={'text'}
+                               name={'skills'}
+                               className={'form-control'}
+                               onChange={this.handleSkillChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Image:</text>
-                        <input ref={(ref) => { this.inputImage = ref; }} type={'file'} name={'image'} className={'form-control'}/>
+                        <input ref={(ref) => { this.inputImage = ref; }}
+                               type={'file'}
+                               name={'image'}
+                               className={'form-control'}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>fileNm:</text>
-                        <input ref={(ref) => { this.fileName = ref; }} type={'text'} className={'form-control'} placeholder={'Enter desired name of the file'}/>
+                        <input ref={(ref) => { this.fileName = ref; }}
+                               type={'text'}
+                               className={'form-control'}
+                               placeholder={'Enter desired name of the file'}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'} style={{paddingLeft: 70}}>
-                    <input type={'submit'} value={'Register'} className={'btn btn-primary'}/>
+                    <input type={'submit'}
+                           value={'Register'}
+                           className={'btn btn-primary'}
+                           required={true}
+                    />
                     <p style={{color: 'white'}}>I already have an account, go back to <Link to="/login">Login</Link>
                     </p>
                 </div>
