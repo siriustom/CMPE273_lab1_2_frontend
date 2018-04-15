@@ -35,7 +35,7 @@ class ProjectDetail extends React.Component {
             data.append('period', this.props.data.Period);
             data.append('projectname', this.props.data.Name);
             data.append('employer', this.props.data.Employer);
-            axios.post('http://localhost:4200/bid', data).then((response) => {
+            axios.post('http://34.209.33.250:4200/bid', data).then((response) => {
                 console.log(response);
             }).catch((error) => {
                 console.log(error);

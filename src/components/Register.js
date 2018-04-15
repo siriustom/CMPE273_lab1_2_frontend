@@ -45,7 +45,7 @@ export class Register extends React.Component {
         data.append('phone', this.state.phone);
         data.append('about', this.state.about);
         data.append('skills', this.state.skills);
-        axios.post('http://localhost:4200/register', data).then((response) => {
+        axios.post('http://34.209.33.250:4200/register', data).then((response) => {
             console.log(response);
             window.history.go(-1);
         }).catch((error) => {

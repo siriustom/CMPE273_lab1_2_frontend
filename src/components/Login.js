@@ -10,7 +10,7 @@ class NormalLoginForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                axios.post('http://localhost:4200/login', {
+                axios.post('http://34.209.33.250:4200/login', {
                     email: values.email,
                     password: values.password,
                 }).then((response) => {

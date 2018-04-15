@@ -58,7 +58,7 @@ class PostProject extends React.Component {
         data.append('skillReq', this.state.skillReq);
         data.append('budget', this.state.budget);
         data.append('period', this.state.date);
-        axios.post('http://localhost:4200/postproject', data).then((response) => {
+        axios.post('http://34.209.33.250:4200/postproject', data).then((response) => {
             console.log(response);
             alert("your project has been posted.");
             window.history.go(-1);

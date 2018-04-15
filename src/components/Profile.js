@@ -61,7 +61,7 @@ class Profile extends React.Component {
         data.append('phone', this.state.phone);
         data.append('about', this.state.about);
         data.append('skills', this.state.skills);
-        axios.post('http://localhost:4200/profileEdit', data).then((response) => {
+        axios.post('http://34.209.33.250:4200/profileEdit', data).then((response) => {
             console.log(response);
             this.setState({isBtnToggle: !this.state.isBtnToggle});
         }).catch((error) => {
@@ -100,7 +100,7 @@ class Profile extends React.Component {
             <div className={'profile-container'}>
                 <div>
                     <img className="img-adjust"
-                         src={`http://localhost:4200/images/${image}`} alt={'profile image'}/>
+                         src={`http://34.209.33.250:4200/images/${image}`} alt={'profile image'}/>
                     <div className="card-body">
                         <h4 className="profile-title"><span>Name: </span>{` ${name}`}</h4>
                         <p className="profile-text"><span>Email: </span>{` ${email}`}</p>

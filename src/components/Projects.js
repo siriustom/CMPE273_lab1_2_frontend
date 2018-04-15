@@ -1,3 +1,4 @@
+
 import React from 'react'
 import axios from "axios/index";
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ class Projects extends React.Component {
         clickedProject: {},
     }
     handleClick = () => {
-        axios.post('http://localhost:4200/projects', {
+        axios.post('http://34.209.33.250:4200/projects', {
             data: 'see list',
         }).then((response) => {
             var parsedArray = JSON.parse(response.data);
@@ -76,4 +77,4 @@ class Projects extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(Projects);
+export default connect(mapStateToProps)(Projects)
