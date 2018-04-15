@@ -48,26 +48,27 @@ class App extends React.Component {
 
     state = {
         isLoggedIn: !!localStorage.getItem(TOKEN_KEY),
-        data: {},
+        user: {},
     };
     handleLogin = (data) => {
         const dataObj = JSON.parse(data);
-        console.log(dataObj);
-        localStorage.setItem(TOKEN_KEY, dataObj);
-        this.setUser(dataObj);
-        Utils.getBidList(dataObj.id);
+        const user = dataObj.user;
+        console.log(user);
+        localStorage.setItem(TOKEN_KEY, user);
+        this.setUser(user);
+        Utils.getBidList(user._id);
         this.setState({isLoggedIn: true});
-        this.setState({data: dataObj});
+        this.setState({user: user});
     }
 
     setUser = (data) => {
         this.props.actions.updateEmail(data.email);
         this.props.actions.updateName(data.name);
-        this.props.actions.updateId(data.id);
+        this.props.actions.updateId(data._id);
         this.props.actions.updatePhone(data.phone);
         this.props.actions.updatePassword(data.password);
-        this.props.actions.updateImage(data.image);
-        this.props.actions.updateAbout(data.about_me);
+        this.props.actions.updateImage(data.filename);
+        this.props.actions.updateAbout(data.about);
         this.props.actions.updateSkills(data.skills);
     }
 
