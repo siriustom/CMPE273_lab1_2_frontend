@@ -52,11 +52,11 @@ class PostProject extends React.Component {
         data.append('userId', this.state.userId);
         data.append('name', this.state.name);
         data.append('file', this.fileUpload.files[0]);
-        data.append('filename', this.fileName.value);
+        data.append('fileName', this.fileName.value);
         data.append('title', this.state.title);
-        data.append('des', this.state.des);
-        data.append('skillReq', this.state.skillReq);
-        data.append('budget', this.state.budget);
+        data.append('description', this.state.des);
+        data.append('skillsRequired', this.state.skillReq);
+        data.append('budgetRange', this.state.budget);
         data.append('period', this.state.date);
         axios.post('http://34.209.33.250:4200/postproject', data).then((response) => {
             console.log(response);
