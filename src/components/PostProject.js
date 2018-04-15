@@ -73,31 +73,55 @@ class PostProject extends React.Component {
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>ProjectTitle:</text>
-                        <input type={'text'} name={'title'} className={'form-control'} onChange={this.handleTitleChange}/>
+                        <input type={'text'}
+                               name={'title'}
+                               className={'form-control'}
+                               onChange={this.handleTitleChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Description:</text>
-                        <textarea rows={'5'} name={'des'} className={'form-control'} onChange={this.handleDesChange}/>
+                        <textarea rows={'5'}
+                                  name={'des'}
+                                  className={'form-control'}
+                                  onChange={this.handleDesChange}
+                                  required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>Skills Required:</text>
-                        <textarea rows={'5'} name={'skillsreq'} className={'form-control'} onChange={this.handleSkillReqChange}/>
+                        <textarea rows={'5'}
+                                  name={'skillsreq'}
+                                  className={'form-control'}
+                                  onChange={this.handleSkillReqChange}
+                                  required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>FileUpload:</text>
-                        <input ref={(ref) => { this.fileUpload = ref; }} type={'file'} className={'form-control'}/>
+                        <input ref={(ref) => { this.fileUpload = ref; }}
+                               type={'file'}
+                               className={'form-control'}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>FileName:</text>
-                        <input ref={(ref) => { this.fileName = ref; }} type={'text'} className={'form-control'} placeholder={'Enter desired name of the file'}/>
+                        <input ref={(ref) => { this.fileName = ref; }}
+                               type={'text'}
+                               className={'form-control'}
+                               placeholder={'Enter desired name of the file'}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
@@ -114,8 +138,12 @@ class PostProject extends React.Component {
                 <div className={'form-group'}>
                     <label className={'register-form-group'}>
                         <text className={'register-from-labeltext'}>PeriodInDays:</text>
-                        <input type={'number'} className={'form-control'} placeholder={'Enter period in days'}
-                               onChange={this.handleDateChange}/>
+                        <input type={'number'}
+                               className={'form-control'}
+                               placeholder={'Enter period in days'}
+                               onChange={this.handleDateChange}
+                               required={true}
+                        />
                     </label>
                 </div>
                 <div className={'form-group'}>
