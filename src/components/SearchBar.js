@@ -35,9 +35,6 @@ export class SearchBar extends React.Component {
         return (
             <AutoComplete
                 className="search-bar"
-                dataSource={options}
-                onSelect={this.onSelect}
-                onSearch={this.handleSearch}
                 placeholder="Search project by name"
                 size="large"
                 optionLabelProp="value"
