@@ -59,13 +59,13 @@ class Projects extends React.Component {
                                         className={'projects-form-content'}
                                         options={this.getOptions()}
                                         striped hover pagination keyBoardNav>
-                            <TableHeaderColumn isKey dataField='Name' width={'130px'}>Project Name</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Description' width={'115px'}>Description</TableHeaderColumn>
-                            <TableHeaderColumn dataField='SkillsRequired' width={'141px'}>Skills Required</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Employer' width={'98px'}>Employer</TableHeaderColumn>
-                            <TableHeaderColumn dataField='BudgetRange' width={'135px'}>Budget Range</TableHeaderColumn>
-                            <TableHeaderColumn dataField='BidNumber' width={'136px'}>Number of Bid</TableHeaderColumn>
-                            <TableHeaderColumn dataField='BidNow' width={'89px'}>Bid Now</TableHeaderColumn>
+                            <TableHeaderColumn isKey dataField='title' width={'130px'}>Project Name</TableHeaderColumn>
+                            <TableHeaderColumn dataField='description' width={'115px'}>Description</TableHeaderColumn>
+                            <TableHeaderColumn dataField='skillsRequired' width={'141px'}>Skills Required</TableHeaderColumn>
+                            <TableHeaderColumn dataField='employer' width={'98px'}>Employer</TableHeaderColumn>
+                            <TableHeaderColumn dataField='budgetRange' width={'135px'}>Budget Range</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bidNumber' width={'136px'}>Number of Bid</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bidNow' width={'89px'}>Bid Now</TableHeaderColumn>
                         </BootstrapTable>
                 }
                 {
