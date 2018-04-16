@@ -4,6 +4,7 @@ import axios from "axios/index";
 import { connect } from 'react-redux';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import ProjectDetail from './ProjectDetail';
+import {SearchBar} from "./SearchBar";
 
 const mapStateToProps = state => ({
     email: state.email,
@@ -48,6 +49,7 @@ class Projects extends React.Component {
     render() {
         return(
             <div className={'projects-form'}>
+                <SearchBar />
                 {
                     !this.state.btnClicked ?
                         <button type="button" class="btn btn-outline-primary" onClick={this.handleClick}>
